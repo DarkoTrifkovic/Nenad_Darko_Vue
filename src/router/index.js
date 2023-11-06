@@ -6,7 +6,10 @@ import Movies from '@/components/Movies.vue'
 Vue.use(VueRouter)
 
 const routes = [
-
+  {
+    path: '/',
+    redirect: '/all-movies',
+  },
   {
     path: '/all-movies',
     name: 'allMovies',
