@@ -1,12 +1,26 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <Header></Header>
+    <SearchBar></SearchBar>
+    <NumberHandler></NumberHandler>
+    <Movies></Movies>
   </div>
 </template>
+
+<script>
+import SearchBar from '@/components/SearchBar.vue';
+import Header from './components/Header.vue'
+import Movies from '@/components/Movies.vue'
+import NumberHandler from './components/NumberHandler.vue';
+export default {
+  components: {
+    Header,
+    SearchBar,
+    Movies,
+    NumberHandler
+  }
+}
+</script>
 
 <style>
 #app {
