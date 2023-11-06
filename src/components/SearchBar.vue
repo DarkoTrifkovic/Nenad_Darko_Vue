@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="search-holder">
-      <input type="text" class="search-holder__input" v-model="inputText" placeholder="Type text only">
+      <input type="text" class="search-holder__input" v-model="inputText" @input="validateInput" placeholder="Type text only">
       <button @click="updateDiv" class="search-holder__button">{{ button }}</button>
     </div>
     <div>{{ displayedText }}</div>
@@ -21,6 +21,9 @@ export default {
   methods: {
     updateDiv() {
       this.displayedText = this.inputText.trim().toLowerCase();
+    },
+    validateInput() {
+      this.inputText = this.inputText.replace(/[^a-zA-Z\s]/g, '');
     },
   },
 };
