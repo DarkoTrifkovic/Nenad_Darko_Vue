@@ -3,7 +3,9 @@
     <Header></Header>
     <SearchBar></SearchBar>
     <NumberHandler></NumberHandler>
+    <Tabs />
     <Movies></Movies>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,12 +14,14 @@ import SearchBar from '@/components/SearchBar.vue';
 import Header from './components/Header.vue'
 import Movies from '@/components/Movies.vue'
 import NumberHandler from './components/NumberHandler.vue';
+import Tabs from './components/Tabs.vue';
 export default {
   components: {
     Header,
     SearchBar,
     Movies,
-    NumberHandler
+    NumberHandler,
+    Tabs
   }
 }
 </script>

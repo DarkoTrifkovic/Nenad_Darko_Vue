@@ -1,28 +1,25 @@
 <template>
     <div>
-        <div class="movie-nav">
-            <router-link :to="{ name: 'allMovies' }"
-                :class="{ 'movie-nav__link--active': $route.name === 'allMovies', 'movie-nav__link': true }">All</router-link>
-            <router-link :to="{ name: 'crimeMovies' }"
-                :class="{ 'movie-nav__link--active': $route.name === 'crimeMovies', 'movie-nav__link': true }">Crime</router-link>
-        </div>
-
         <ul class="movie-list">
             <Movie v-for="movie in filteredMovies" :key="movie.title" :movie="movie" class="movie-item"></Movie>
         </ul>
     </div>
-</template>
+</template> 
   
   
   
 <script>
 import Movie from './Movie.vue';
+
+
 export default {
     components: {
-        Movie,
+        Movie
     },
     data() {
-        return {
+        return {  
+           
+            listOfGenres: ['All', 'Crime'],
             listOfMovies: [
                 {
                     title: "Pulp Fiction",
@@ -88,16 +85,16 @@ export default {
             ],
         };
     },
+
     computed: {
         filteredMovies() {
-            if (this.$route.name === 'allMovies') {
-                return this.listOfMovies;
-            } else if (this.$route.name === 'crimeMovies') {
-                return this.listOfMovies.filter((movie) => movie.genre === 'Crime');
+            if(!this.$route.params.id || this.$route.params.id === 'All') {
+                return this.listOfMovies
             }
-            return [];
+            return this.listOfMovies.filter((movie) => movie.genre === this.$route.params.id);
+           
         },
-    },
+    }
     
 };
 </script>

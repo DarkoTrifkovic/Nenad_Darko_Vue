@@ -15,9 +15,11 @@ export default {
     },
     methods: {
         increaseNumber() {
+            console.log('callling increment')
             this.number++;
         },
         decreaseNumber() {
+            console.log('callling decrement')
             this.number--;
         },
     },

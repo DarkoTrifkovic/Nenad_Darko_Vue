@@ -1,30 +1,24 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import Movies from '@/components/Movies.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import Movies from "@/components/Movies.vue";
+import Movie from "@/components/Movie.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    redirect: '/all-movies',
+    path: "/",
+    redirect: "/genre",
   },
   {
-    path: '/all-movies',
-    name: 'allMovies',
+    path: "/genre/:id",
     component: Movies,
   },
-  {
-    path: '/crime-movies',
-    name: 'crimeMovies',
-    component: Movies,
-  },
-]
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-
-export default router
+export default router;
