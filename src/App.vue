@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header />
     <Main />
-    <router-view/>
+    <router-view />
     <Footer />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Header from '@/components/Header.vue';
-import Main from './components/Main.vue';
-import Footer from './components/Footer.vue';
+import Vue from "vue";
+import Header from "@/components/Header.vue";
+import Main from "./components/Main.vue";
+import Footer from "./components/Footer.vue";
 export default Vue.extend({
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Header,
     Main,
-    Footer
+    Footer,
   },
 });
 </script>

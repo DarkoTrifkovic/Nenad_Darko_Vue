@@ -6,14 +6,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
+
+interface IData {
+  logo: string;
+  button: string;
+}
 
 export default Vue.extend({
-  name: 'TS-Header',
-  data() {
+  name: "TS-Header",
+  data(): IData {
     return {
-      logo: 'netflixroulette' as string,
-      button: '+ ADD MOVIE' as string
+      logo: "netflixroulette",
+      button: "+ ADD MOVIE",
     };
   },
 });

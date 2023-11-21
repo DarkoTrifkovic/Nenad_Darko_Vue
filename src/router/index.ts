@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
-import MoviesHolder from '@/views/MoviesHolder.vue'
+import Vue from "vue";
+import VueRouter, { RouteConfig } from "vue-router";
+import MoviesHolder from "@/views/MoviesHolder.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
@@ -13,11 +13,10 @@ const routes: Array<RouteConfig> = [
     path: "/genre/:id",
     component: MoviesHolder,
   },
-
-]
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
